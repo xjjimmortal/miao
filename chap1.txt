@@ -1,0 +1,27 @@
+```javascript
+<script>
+
+x=2024
+console.log(x) //输出x
+console.log(2*x) //输出x的两倍
+console.log(x**2) //输出x的平方
+console.log(x**3) //输出x的三次方
+console.log(x**5) //输出x的五次方
+console.log("x") //输出x的字符串形式
+console.log(x>=50 && x<=100) //输出x是否在50到100以内
+console.log(x%2==1) //输出x是否为奇数
+console.log(x%2==0) //输出x是否为偶数
+console.log(x==10?baz:(x>10?foo:bar)) //x大于10输出foo，小于10输出bar，等于10输出baz
+console.log(x%10) //输出x的个位数
+console.log((x-x%100)%1000) //输出x的百位数
+console.log(x%100) //输出x百位数以下的部分
+console.log(x>200 && x%3==0 && x%7!=0) //输出x是否大于200且为3的倍数但不是7的倍数
+console.log((x-x%100)/100+1) //输出x作为年份时，所在的世纪
+console.log(x%4==0) //输出x作为年份时，当年是否举办奥运会
+console.log((x-2002)%4==0) //输出x作为年份时，当年是否举办世界杯
+console.log(x%4==0) //输出x作为年份时，是否为闰年
+console.log() //输出x是否为素数（此时x范围为0以上100以内）
+//100以内素数遍历是否相等？循环语句从2除到x-1余数都不为零？
+
+</script>
+```
