@@ -539,7 +539,7 @@
     min=x
     if (x>max) {
             max=x
-        }
+        }   //初始直接max=x就可以
 
     while (c<n-1) {
         x=Number(prompt())
@@ -606,6 +606,37 @@
         c=c+1
     }
 
+    console.log(sum)
+</script>
+
+<script type="ok" id="ch0105/09.1">
+    var m=Number(prompt("m"))
+    var n=Number(prompt("n"))
+    var sum=0
+    if (m%2==0) {
+        m=m+1
+    } 
+    var c=m
+
+    while (c<n+1) {
+        sum=sum+c
+        c=c+2
+    }
+
+    console.log(sum)
+</script>
+
+<script type="ok" id="ch0105/09.2">
+    var m=Number(prompt("m"))
+    var n=Number(prompt("n"))
+    if (m%2==0) {
+        m=m+1
+    }
+    if (n%2==0) {
+        n=n-1
+    }
+    var 项数=(n-m)/2+1
+    var sum=(m+n)*项数/2
     console.log(sum)
 </script>
 
@@ -834,5 +865,5 @@
 </script>
 
 <script>
-    
+
 </script>
