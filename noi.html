@@ -805,6 +805,35 @@
     
 </script>
 
+<script type="ok" id="ch0105/17.2">
+    var k=+prompt("k")
+    var a1=1
+    var a2=0
+    var a
+ 
+    for (var i=0; i<k; i++) {
+            a=a1+a2
+            a1=a2
+            a2=a
+        }
+
+    console.log(a)
+    
+</script>
+
+<script type="ok" id="不通过第三个变量交换a和b的值">
+    var a=+prompt("a")
+    var b=+prompt('b')
+
+    b=a+b
+    a=b-a
+    b=b-a
+
+    console.log("a'="+a)
+    console.log("b'="+b)
+
+</script>
+
 <script type="ok" id="ch0105/18">
     var n=Number(prompt("n"))
     var total=Number(prompt("total"))
@@ -844,7 +873,7 @@
         time=(Math.sqrt(x**2+y**2))*2/50+1.5*p
         console.log(Math.ceil(time))
         c=c+1
-    }
+    }  //恰好题目验的是一次，没算总时间var time=0, time=time+...
 
 </script>
 
@@ -864,6 +893,106 @@
     console.log(rebound)
 </script>
 
-<script>
+<script type="ok" id="ch0105/21">
+    var x=+prompt()
 
+    for (var i=0; ;i++) {
+        if (x==1) {
+            console.log("End")
+            break
+        }
+        else if (x % 2 == 1) {
+            y = x * 3 + 1
+            console.log(""+x+"*3+1="+y)
+            x=y
+        } else {
+            y = x / 2
+            console.log(""+x+"/2="+y)
+            x=y
+        }     
+    }    //while x!=1
+    
+</script>
+
+<script type="ok" id="ch0105/22">
+    var remain=300
+    var total_storage=0
+    var storage=0
+
+    for (var i=0; i<12; i++) {
+        budget=+prompt()
+        if (budget>remain) {
+            console.log(-(i+1))
+            break
+        } else {
+            remain=remain-budget
+            storage= remain - remain % 100
+            total_storage=total_storage+storage
+            remain=remain-storage+300
+        }
+    }
+
+    if (i==12) {
+        console.log(total_storage*1.2+remain-300)
+    }
+</script>
+
+<script type="ok" id="ch0105/23">
+    var m=+prompt("药品总量")
+    var n=+prompt("人数")
+    var c=0
+
+    for (var i=0; i<n; i++) {
+        var take=+prompt()
+        if (take>m) {
+            c+=1
+        } else {
+            m=m-take
+        }
+    }
+
+    console.log(c)
+</script>
+
+<script type="ok" id="ch0105/24">
+    var n=+prompt()
+    var count=0
+    var c=0
+
+    for (var i=0; i<n; i++) {
+        收缩压=+prompt("收缩压")
+        舒张压=+prompt("舒张压")
+        if (收缩压>=90 && 收缩压<=140 && 舒张压>=60 && 舒张压<=90) {
+            count++  //不如直接把对比移到这里
+        } else {
+            if (count>c) {
+            c=count
+           }
+            count=0
+        }
+    }
+
+    if (count>c) {
+        c=count
+    }   //问题出在这，有可能连续最长的正常出现在最后，没有进入else不正常，需要再比较一次
+
+    console.log(c) 
+</script>
+
+<script id="ch0105/25">
+    debugger
+    for (var i=100; i<=666; i++) {
+        var a=(i-i%100)/100
+        var b=(i%100-i%10)/10
+        var c=i%10
+        seven=a*7*7+b*7+c
+        nine=c*9*9+b*9+a
+        if (seven==nine) {
+            break
+        }
+    }
+
+    console.log(seven)
+    console.log(i)
+    console.log(c*100+b*10+a)
 </script>
