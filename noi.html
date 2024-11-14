@@ -979,8 +979,7 @@
     console.log(c) 
 </script>
 
-<script id="ch0105/25">
-    debugger
+<script type="ok" id="ch0105/25.0">
     for (var i=100; i<=666; i++) {
         var a=(i-i%100)/100
         var b=(i%100-i%10)/10
@@ -995,4 +994,46 @@
     console.log(seven)
     console.log(i)
     console.log(c*100+b*10+a)
+    // 循环不对，不能按10进制加上去，7进制得限制每个数
+</script>
+
+<script type="ok" id="ch0105/25.1">
+    function findMatch() {for (var a=1; a<=6; a++) {
+        for (var b = 0; b <= 6; b++) {
+            for (var c = 0; c <= 6; c++) {
+                seven = a * 7 * 7 + b * 7 + c
+                nine = c * 9 * 9 + b * 9 + a
+                if (seven == nine) {
+                    console.log(seven)
+                    console.log(a * 100 + b * 10 + c)
+                    console.log(c * 100 + b * 10 + a)
+                    return
+                }
+            }
+        }
+    }
+    }
+    findMatch();
+    //不能用break,只跳出最内层一个循环，return结束循环只能在函数内部使用
+</script>
+
+<script type="ok" id="ch0105/25">
+    var found=false
+
+    for (var a=1; a<=6 && !found; a++) {
+        for (var b=0; b<=6 && !found; b++) {
+            for (var c=0; c<=6; c++) {
+                seven = a * 7 * 7 + b * 7 + c
+                nine = c * 9 * 9 + b * 9 + a
+                if (seven == nine) {
+                    found=true
+                    console.log(seven)
+                    console.log(a * 100 + b * 10 + c)
+                    console.log(c * 100 + b * 10 + a)
+                    break
+                }
+            }
+        }
+    }
+    //用布尔变量来控制外层循环
 </script>
