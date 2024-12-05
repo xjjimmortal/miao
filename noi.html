@@ -1037,3 +1037,149 @@
     }
     //用布尔变量来控制外层循环
 </script>
+
+<script type="ok" id="ch0105/26">
+    var n=+prompt()
+    var count=0
+
+    for (var i=0; i<n; i++) {
+        var x=+prompt()
+        a=x%10
+        b=((x-a)/10)%10
+        c=((x-10*b-a)/100)%10
+        d=Math.trunc(x/1000)
+        if ((a-b-c-d)>0) {
+            count+=1
+        }
+    }
+
+    console.log(count)
+</script>
+
+<script type="ok" id="ch0105/27">
+    var k=+prompt()
+    var c=1
+    sn=1
+
+    while (sn<=k) {
+        c++
+        sn=sn+1/c
+    }
+
+    console.log(c)
+</script>
+
+<script type="ok" id="ch0105/28">
+    var x=+prompt()
+
+    while (x>0) {
+        a=x%10
+        console.log(a)
+        x=(x-a)/10
+    }
+    // 如何以“数字之间以一个空格分开”的形式输出结果呢？
+    // 如果输入包括0，用do-while循环解决
+</script>
+
+<script type="ok" id="ch0105/29">
+    x=+prompt()
+    result=0
+    index=1
+
+    if (x<0) {
+        index=-1
+        x=x*(-1)
+    }
+
+    do {
+        a=x%10
+        x=(x-a)/10
+        result=result*10+a
+    } while(x/10>0) 
+
+    console.log(result*index)
+    //没有定义var，具体影响是什么？
+</script>
+
+<script type="ok" id="ch0105/30">
+    var m=+prompt()
+    var k=+prompt()
+    var c=0
+
+    originalM=m
+
+    while (m/10>0) {
+        a=m%10
+        m=(m-a)/10
+        if (a==3) {
+            c++
+        }
+    }
+
+    if (originalM%19==0 && c==k) {
+        console.log("YES")
+    } else {
+        console.log("NO")
+    }
+</script>
+
+<script>
+    var N=+prompt("N bulbs")
+    var M=+prompt("M people")
+    
+    for (var c=0; c<N; c++) {
+        if (c%M==0) {
+            a*=(-1)
+        }
+        if (a==-1) {
+            console.log(c+1)
+        }
+    }
+
+
+</script>
+
+<script type="ok" id="ch0105/32">
+    var n=+prompt()
+    var q=2
+    var p=1
+    var sum=0
+
+    for (var c=0; c<n; c++) {
+        sum=sum+q/p
+        qorigin=q
+        q=q+p
+        p=qorigin
+    }
+
+    console.log(sum.toFixed(4))
+</script>
+
+<script type="ok" id="ch0105/33">
+    var n=+prompt()
+    var sum=0
+
+    for (var i=1; i<n+1; i++) {
+        sum=sum+( (-1)**(i-1) )/i
+    }
+
+    console.log(sum.toFixed(4))
+</script>
+
+<script type="ok" id="ch0105/34">
+    var n=+prompt()
+    var sum=0
+    var multiply=1
+
+    for (i=1; i<=n; i++) {
+        multiply*=i
+        sum+=multiply
+    }
+
+    console.log(sum) //阶乘factorial
+</script>
+
+<script>
+    
+</script>
+
