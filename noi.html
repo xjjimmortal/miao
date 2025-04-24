@@ -1123,19 +1123,27 @@
     }
 </script>
 
-<script>
+<script type="ok" id="ch0105/31">
     var N=+prompt("N bulbs")
     var M=+prompt("M people")
+    var result=""
     
-    for (var c=0; c<N; c++) {
-        if (c%M==0) {
-            a*=(-1)
+    for (var c=1; c<N+1; c++) {
+        var a=1
+        for (var i=1; i<M+1; i++) {
+            if (c % i == 0) {
+                a *= (-1)
+            }
         }
+        
         if (a==-1) {
-            console.log(c+1)
+            result+=c+","
         }
-    }
-
+    } 
+    
+    result = result.slice(0,-1)
+    console.log(result)
+    //自身状态的调节很重要，状态不好一团乱麻，脑子清楚的时候直接就写出来了。
 
 </script>
 
@@ -1241,7 +1249,10 @@
             console.log(output)
             m -= 1
         }
-    }
+    } 
+    /*本题文字描述的输入和输入示例的输入不一样，按文字描述的来。
+    如果按输入示例来，需要多输入一个多项式个数，多嵌套一层循环，
+    一次运行完成几个多项式的输入*/
     
 </script>
 
@@ -1299,11 +1310,44 @@
 </script>
 
 <script id="ch0105/42">
+    var h=+prompt()
+    var w=+prompt()
+    var char=prompt()
+    var fill=+prompt()
 
+    var result=""
+
+    for (var i=0; i<h; i++) {
+        for (var j=0; j<w; j++) {
+            if (fill==1 || j==0 || j==w-1 || i==0 || i==h-1) {
+                result += char
+            } else {
+                result+=" "
+            }
+        }
+        result+="\n"
+    }
+
+    console.log(result)
 </script>
 
-<script id="ch0105/43">
-
+<script type="ok" id="ch0105/43">
+    var n=+prompt()
+    for (var i=2; i<=n; i++) {
+        if (n%i==0) {
+            var 质数=true
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    质数=false
+                    break
+                } 
+            }
+            if (质数) {
+                console.log(n/i)
+                break
+            }
+        }
+    }
 </script>
 
 <script type="ok" id="ch0105/44">
@@ -1346,6 +1390,24 @@
         }
 
         payperday += 1
+    }
+
+    console.log(sum)
+</script>
+
+<script type="ok" id="ch0105/45-2">
+    var n=+prompt()
+    var sum=0
+    var payperday=1
+    var day=0
+
+    for (var i=1; i<=n; i++) {
+        sum+=payperday
+        day++
+        if (day=payperday) {
+            payperday++
+            day=0
+        }
     }
 
     console.log(sum)
