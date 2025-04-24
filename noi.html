@@ -1309,7 +1309,7 @@
     console.log(count)
 </script>
 
-<script id="ch0105/42">
+<script type="ok" id="ch0105/42">
     var h=+prompt()
     var w=+prompt()
     var char=prompt()
@@ -1411,4 +1411,92 @@
     }
 
     console.log(sum)
+</script>
+
+<script type="ok" id="ch2/LoopingATriangle">
+    var result = ""
+    
+    for (var i = 1; i <= 7; i++) {
+        var line = ""
+        while (line.length<i) {
+            line += "#"
+        }
+        result+=line
+        result+="\n"
+    }
+    console.log(result)
+</script>
+
+<script type="ok" id="ch2/LoopingATriangle-2">
+    var size=+prompt()
+    var result = ""
+    var line = ""
+
+    for (var i = 0; i < size; i++) {
+        line += "#"
+        result += line + "\n"
+    }
+
+    console.log(result)
+</script>
+
+<script type="ok" id="ch2/FizzBuzz">
+    var result=""
+    for (var i=1; i<=100; i++) {
+        if (i%3==0 && i%5==0) {
+            result+="FizzBuzz,"
+        } else if (i%3==0) {
+            result+="Fizz,"
+        } else if (i%5==0) {
+            result+="Buzz,"
+        } else {
+            result+=String(i)+","
+        }
+    }
+    result=result.slice(0,-1)
+    console.log(result)
+</script>
+
+<script type="ok" id="ch2/ChessBoard">
+    var size=+prompt()
+    var result=""
+
+    for (var i=1; i<=size; i++) {
+        for (var j=1; j<=size; j++) {
+            if (i%2==0) {
+                if (j%2==0) {
+                    result+=" "       //偶数行的偶数位是空格
+                } else {
+                    result+="#"
+                }
+            } else {
+                if (j % 2 == 0) {
+                    result += "#"
+                } else {
+                    result += " "     //奇数行的奇数位是空格
+                }
+            }
+        }
+        result += "\n"
+    }
+
+    console.log(result)
+</script>
+
+<script type="ok" id="ch2/ChessBoard-2">
+    var size=+prompt()
+    var result=""
+
+    for (var i=1; i<=size; i++) {
+        for (var j=1; j<=size; j++) {
+            if ((i+j)%2 == 0) {
+                result+=" "       //行列和为偶数是空格 
+            } else {
+                result += "#"
+            }
+        }
+        result += "\n"
+    }
+
+    console.log(result)
 </script>
